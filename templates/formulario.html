@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/css/output.css" rel="stylesheet">
+    <title>Formulario de registro de datos</title>
+
+</head>
+
+
+<body class="bg-gray-100 p-6">
+    <div class="max-w-xl mx-auto bg-white shadow-md rounded p-8">
+        <h1 class="text-2xl font-bold mb-6 text-center">Formulario de Contacto</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="bg-green-100 text-green-800 p-3 rounded mb-4">
+            {{ messages[0] }}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <form method="POST">
+            <label class="block mb-2">Nombres</label>
+            <input name="nombre" placeholder="Ingresa tu nombre..." class="w-full border p-2 mb-4 rounded" required>
+
+            <label class="block mb-2">Apellidos</label>
+            <input name="apellido" placeholder="Ingresa tu apellido..."class="w-full border p-2 mb-4 rounded" required>
+
+            <label class="block mb-2">Número telefonico </label>
+            <input type="tel" placeholder="Ingresa tu número..."  class="w-full border p-2 mb-4 rounded"required>
+
+            <label class="block mb-2">Correo electronico</label>
+            <input name="correo" placeholder="Ingresa tu correo..." type="email" class="w-full border p-2 mb-4 rounded" required>
+
+            <label class="block mb-2">Preferencias</label>
+            <input List="Preferencias" placeholder="Selecciona tu Preferencia..." class="w-full border p-2 mb-4 rounded" required>
+            <datalist id="Preferencias">
+                <option value="Ramos">
+                <option value="Arreglos de condolencias">
+                <option value="Coronas">
+                <option value="Decoraciones">
+                <option value="Flores">
+                <option value="Otros">
+            </datalist>
+
+            <div class="flex justify-center mt-6">
+                <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+                    Enviar
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+</html>
