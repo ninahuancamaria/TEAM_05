@@ -9,7 +9,7 @@
   <link href="{{ url_for('static', filename='css/carrusel.css') }}" rel="stylesheet">
   <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  
+
 </head>
 
 <body class="bg-gray-50 text-gray-800">
@@ -19,7 +19,7 @@
     <!-- Logo + Nombre -->
 
     <div class="flex items-center gap-2">
-      <a href="https://www.whatsapp.com/" class="hover:underline">
+      <a href="/" class="hover:underline">
         <img src="static/image/img1.png" alt="Logo del negocio"
           class="w-10 h-10 hover:scale-110 transition-transform duration-300" />
       </a>
@@ -60,23 +60,28 @@
   </nav>
   <!--Carrusel de los descuentos-->
 
-<div class="relative w-full overflow-hidden h-64 mt-10">
+  <div class="relative w-full overflow-hidden h-64 mt-10">
     <div class="flex animate-slide-x">
-      <img src="{{ url_for('static', filename='image/descuento1.png') }}" class="w-full h-64 object-cover" alt="Imagen 1">
-      <img src="{{ url_for('static', filename='image/descuento2.png') }}" class="w-full h-64 object-cover" alt="Imagen 2">
-      <img src="{{ url_for('static', filename='image/descuento3.png') }}" class="w-full h-64 object-cover" alt="Imagen 3">
-      <img src="{{ url_for('static', filename='image/descuento4.png') }}" class="w-full h-64 object-cover" alt="Imagen 4">
-      <img src="{{ url_for('static', filename='image/descuento5.png') }}" class="w-full h-64 object-cover" alt="Imagen 5">
+      <img src="{{ url_for('static', filename='image/descuento1.png') }}" class="w-full h-64 object-cover"
+        alt="Imagen 1">
+      <img src="{{ url_for('static', filename='image/descuento2.png') }}" class="w-full h-64 object-cover"
+        alt="Imagen 2">
+      <img src="{{ url_for('static', filename='image/descuento3.png') }}" class="w-full h-64 object-cover"
+        alt="Imagen 3">
+      <img src="{{ url_for('static', filename='image/descuento4.png') }}" class="w-full h-64 object-cover"
+        alt="Imagen 4">
+      <img src="{{ url_for('static', filename='image/descuento5.png') }}" class="w-full h-64 object-cover"
+        alt="Imagen 5">
     </div>
   </div>
 
   <div class="relative w-full max-w4xl overflow-hidden rounded-2xl shadow-lg">
-        <div class="flex animate-slide-x">
-            {% for img in imagenes %}
-            <img src="{{ images }}" class="w-full h-64 w-96 object-cover" alt="Image {{ loop.index }}">
-            {% endfor %}
-        </div>
+    <div class="flex animate-slide-x">
+      {% for img in imagenes %}
+      <img src="{{ images }}" class="w-full h-64 w-96 object-cover" alt="Image {{ loop.index }}">
+      {% endfor %}
     </div>
+  </div>
 
 
 
@@ -85,40 +90,111 @@
     <h1 class="text-center font-bold mb-10 ">Ramos</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       <!-- Tarjeta de producto -->
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="static/image/ramo1.png" alt="Ramo 1" class="w-full h-50 object-cover hover:scale-110 transition-transform duration-300" />
-        <div class="p-4">
-          <h4 class="font-semibold text-lg">El Amor Eterno</h4>
-          <p class="text-pink-600 font-bold">S/299.00</p>
+      <div class="bg-write shadow-md rounded-lg overflow-hidden">
+
+        <img src="static/image/ramo1.jpg" alt="Ramo 1"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="relative p-4 bg-white rounded shadow-md">
+          <h4 class="font-semibold text-lg">Alma de Bosque</h4>
+          <p class="text-pink-600 font-bold">S/95.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
         </div>
       </div>
 
       <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="static/image/ramo2.png" alt="Ramo 2" class="w-full h-50 object-cover hover:scale-110 transition-transform duration-300" />
+        <img src="static/image/ramo2.jpg" alt="Ramo 2"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
         <div class="p-4">
-          <h4 class="font-semibold text-lg">Fiesta Floral</h4>
-          <p class="text-pink-600 font-bold">S/319.00</p>
+          <h4 class="font-semibold text-lg">Aurora Moderna</h4>
+          <p class="text-pink-600 font-bold">S/100.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
         </div>
       </div>
 
       <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="static/image/ramo3.png" alt="Ramo 3" class="w-full h-50 object-cover hover:scale-110 transition-transform duration-300"  />
+        <img src="static/image/ramo3.png" alt="Ramo 3"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
         <div class="p-4">
-          <h4 class="font-semibold text-lg">Armonía en Rosa</h4>
-          <p class="text-pink-600 font-bold">S/319.00</p>
+          <h4 class="font-semibold text-lg">Atetish</h4>
+          <p class="text-pink-600 font-bold">S/90.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
         </div>
       </div>
 
       <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="static/image/ramo4.png" alt="Ramo 4" class="w-full h-50 object-cover hover:scale-110 transition-transform duration-300"  />
+        <img src="static/image/ramo4.png" alt="Ramo 4"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
         <div class="p-4">
-          <h4 class="font-semibold text-lg">Corazón de Rosas</h4>
-          <p class="text-pink-600 font-bold">S/319.00</p>
+          <h4 class="font-semibold text-lg">Belicate</h4>
+          <p class="text-pink-600 font-bold">S/85.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
         </div>
+      </div>
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramo5.jpg" alt="Ramo 5"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Canto de Rio</h4>
+          <p class="text-pink-600 font-bold">S/80.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
       </div>
     </div>
   </section>
-   <script src="{{ url_for('static', filename='js/carrusel.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/carrusel.js') }}"></script>
 </body>
 
 </html>
