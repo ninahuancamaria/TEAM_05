@@ -5,7 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Florería Manu</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link href="{{ url_for('static', filename='css/carrusel.css') }}" rel="stylesheet">
   <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
@@ -21,7 +20,8 @@
     <div class="flex items-center gap-2">
       <a href="/" class="hover:underline">
         <img src="static/image/img1.png" alt="Logo del negocio"
-          class="w-10 h-10 hover:scale-110 transition-transform duration-300" />
+          class="w-15 h-10 rounded-lg border-4 border-white shadow-lg hover:scale-110 transition-transform duration-300" />
+
       </a>
       <h1 class="text-xl font-bold">Florería Manu</h1>
     </div>
@@ -38,6 +38,18 @@
 
     <!-- Íconos -->
     <ul class="flex items-center gap-4">
+      <li>
+        <a href="https://www.instagram.com/" class="hover:underline">
+          <img src="static/image/retos.gif" alt="Misiones del cliente"
+            class="w-10 h-10 hover:scale-110 transition-transform duration-300" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/" class="hover:underline">
+          <img src="static/image/claro.png" alt="Tema claro/oscuro"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+        </a>
+      </li>
       <li>
         <a href="https://www.whatsapp.com/" class="hover:underline">
           <img src="static/image/carrito.png" alt="Carrito de compras"
@@ -60,8 +72,8 @@
   </nav>
   <!--Carrusel de los descuentos-->
 
-  <div class="relative w-full overflow-hidden h-64 mt-10">
-    <div class="flex animate-slide-x">
+  <div class="relative w-full overflow-hidden mt-10">
+    <div class="carousel-track">
       <img src="{{ url_for('static', filename='image/descuento1.png') }}" class="w-full h-64 object-cover"
         alt="Imagen 1">
       <img src="{{ url_for('static', filename='image/descuento2.png') }}" class="w-full h-64 object-cover"
@@ -72,6 +84,8 @@
         alt="Imagen 4">
       <img src="{{ url_for('static', filename='image/descuento5.png') }}" class="w-full h-64 object-cover"
         alt="Imagen 5">
+      <img src="{{ url_for('static', filename='image/descuento6.png') }}" class="w-full h-64 object-cover"
+        alt="Imagen 6">
     </div>
   </div>
 
@@ -87,10 +101,10 @@
 
   <!-- Sección de Ramos -->
   <section class="p-10">
-    <h1 class="text-center font-bold mb-10 ">Ramos</h1>
+    <h5 class="text-center font-bold mb-10 ">RAMOS</h5>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       <!-- Tarjeta de producto -->
-      <div class="bg-write shadow-md rounded-lg overflow-hidden">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
 
         <img src="static/image/ramo1.jpg" alt="Ramo 1"
           class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
@@ -125,10 +139,11 @@
                 Añadir al carrito
             </a>
             </button>
-            <a href="https://www.facebook.com/" class="hover:underline">
-              <img src="static/image/favorito.png" alt="Sección de favoritos"
-                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            <a href="#" id="heartLink">
+              <img src="static/image/favorito.png" alt="Sección de favoritos" id="heartIcon"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer" />
             </a>
+
           </div>
         </div>
       </div>
@@ -191,10 +206,35 @@
               <img src="static/image/favorito.png" alt="Sección de favoritos"
                 class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
             </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramo6.png" alt="Ramo 6"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg">Clicken lila</h4>
+          <p class="text-pink-600 font-bold">S/90.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="https://www.facebook.com/" class="hover:underline">
+              <img src="static/image/favorito.png" alt="Sección de favoritos"
+                class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+  <script src="{{ url_for('static', filename='js/favorito.js') }}"></script>
   <script src="{{ url_for('static', filename='js/carrusel.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
 </html>
