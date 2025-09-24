@@ -1,57 +1,100 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="static/css/output.css" rel="stylesheet">
-    <title>Formulario de registro de datos</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Compra</title>
+  <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/formulario.css') }}">
 </head>
-
-
-<body class="bg-gray-100 p-6">
-    <div class="max-w-xl mx-auto bg-white shadow-md rounded p-8">
-        <h1 class="text-2xl font-bold mb-6 text-center">Formulario de Contacto</h1>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <div class="bg-green-100 text-green-800 p-3 rounded mb-4">
-            {{ messages[0] }}
-        </div>
-        {% endif %}
-        {% endwith %}
-        <form method="POST">
-            <label class="block mb-2">Nombres</label>
-            <input name="nombre" placeholder="Ingresa tu nombre..." class="w-full border p-2 mb-4 rounded" required>
-
-            <label class="block mb-2">Apellidos</label>
-            <input name="apellido" placeholder="Ingresa tu apellido..."class="w-full border p-2 mb-4 rounded" required>
-
-            <label class="block mb-2">Número telefonico </label>
-            <input type="tel" placeholder="Ingresa tu número..."  class="w-full border p-2 mb-4 rounded"required>
-
-            <label class="block mb-2">Correo electronico</label>
-            <input name="correo" placeholder="Ingresa tu correo..." type="email" class="w-full border p-2 mb-4 rounded" required>
-
-            <label class="block mb-2">Preferencias</label>
-            <input List="Preferencias" placeholder="Selecciona tu Preferencia..." class="w-full border p-2 mb-4 rounded" required>
-            <datalist id="Preferencias">
-                <option value="Ramos">
-                <option value="Arreglos de condolencias">
-                <option value="Coronas">
-                <option value="Decoraciones">
-                <option value="Flores">
-                <option value="Otros">
-            </datalist>
-
-            <div class="flex justify-center mt-6">
-                <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
-                    Enviar
-                </button>
-            </div>
-        </form>
+<body class="bg-pink-50 font-sans">
+  <div class="max-w-2xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-lg">
+    <!-- Encabezado -->
+    <div class="mb-6 text-center">
+      <h1 class="text-2xl font-bold text-pink-700">Formulario de Compra de Productos</h1>
+      <p class="text-sm text-gray-600 mt-1">Realizamos entregas únicamente dentro de Cañete, Lima - Perú 🌷</p>
     </div>
+
+    <!-- Datos personales -->
+    <div class="mb-4">
+      <h2 class="text-pink-600 font-semibold mb-2">Datos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" placeholder="Nombre" class="border rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-pink-300">
+        <input type="text" placeholder="Apellido" class="border rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-pink-300">
+      </div>
+    </div>
+
+    <!-- Contacto -->
+    <div class="mb-4">
+      <h2 class="text-pink-600 font-semibold mb-2">Contacto</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="email" placeholder="Correo electrónico" class="border rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-pink-300">
+        <input type="tel" placeholder="999-999-999" class="border rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-pink-300">
+      </div>
+    </div>
+
+    <!-- Dirección -->
+    <div class="mb-4">
+      <h2 class="text-pink-600 font-semibold mb-2">Dirección de entrega</h2>
+      <input type="text" placeholder="Dirección" class="border rounded px-4 py-2 w-full mb-2 focus:outline-none focus:ring-2 focus:ring-pink-300">
+      <input type="text" placeholder="Ingrese referencia" class="border rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-pink-300">
+    </div>
+
+    <!-- Método de pago -->
+    <div class="mb-4">
+      <h2 class="text-pink-600 font-semibold mb-2">Método de pago</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+        <label class="flex items-center space-x-2">
+          <input type="radio" name="pago" value="yape" class="accent-pink-500">
+          <span>Yape</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="radio" name="pago" value="plin" class="accent-pink-500">
+          <span>Plin</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="radio" name="pago" value="entrega" class="accent-pink-500">
+          <span>Pago contra entrega</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Tipo de entrega -->
+    <div class="mb-6">
+      <h2 class="text-pink-600 font-semibold mb-2">Tipo de entrega</h2>
+      <div class="grid grid-cols-2 gap-2">
+        <label class="flex items-center space-x-2">
+          <input type="radio" name="entrega" value="presencial" class="accent-pink-500">
+          <span>Presencial</span>
+        </label>
+        <label class="flex items-center space-x-2">
+          <input type="radio" name="entrega" value="delivery" class="accent-pink-500">
+          <span>Delivery</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="container">
+      <button id="shipBtn">Enviar</button>
+
+      <div class="animation">
+        <div class="truck">
+          <div class="box"></div>
+        </div>
+        <div class="road"></div>
+        <div class="message">¡Envio exitoso!</div>
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="flex justify-between items-center">
+      <button class="text-pink-600 hover:underline flex items-center space-x-1">
+        <span>&larr;</span><span>Volver</span>
+      </button>
+      <a href="/envio" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition-colors">
+        Contactar por WhatsApp
+      </a>
+    </div>
+  </div>
 </body>
-
-
 </html>

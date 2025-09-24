@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Botón Envío - Caricaturesco</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+</head>
+<body>
+  <button id="shipBtn" class="ship-btn" aria-label="Enviar paquete">
+    <!-- Texto del botón -->
+    <span class="btn-text">Enviar 📦</span>
+    <span class="message">🎉 ¡Envío exitoso! 🎉</span>
+
+    <!-- Elementos visuales dentro del botón -->
+    <div class="package" aria-hidden="true"></div>
+
+    <div class="truck" aria-hidden="true">
+      <!-- carga (por detrás) -->
+      <div class="cargo"></div>
+
+      <!-- cabina (delante) -->
+      <div class="cabina"></div>
+
+      <!-- ruedas -->
+      <div class="wheel wheel-left"></div>
+      <div class="wheel wheel-right"></div>
+    </div>
+
+    <!-- pista que aparece sólo durante la animación -->
+    <div class="road" aria-hidden="true"></div>
+
+    <!-- Mensaje final -->
+    <div class="message" aria-live="polite">🎉 ¡Envío exitoso! 🎉</div>
+  </button>
+
+  <script src="{{ url_for('static', filename='js/envio.js') }}"></script>
+</body>
+</html>

@@ -5,6 +5,6 @@
     const isFilled = heartIcon.src.includes('favorito-rojo.png');
 
     heartIcon.src = isFilled
-      ? 'static/image/favorito.png'
-      : 'static/image/favorito-rojo.png';
+      ? 'static/image/logos/favorito.png'
+      : 'static/image/logos/favorito-rojo.png';
   });

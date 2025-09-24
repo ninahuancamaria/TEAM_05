@@ -1,24 +1,36 @@
-const carusel = document.querySelector('.carousel-track');
-const dots = document.querySelector('.carousel-indicator');
-const totalSlides = dots.length;
-let currentIndex = 0;
 
-function updateCarousel() {
-    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-    dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentIndex);
-   });
-}
+  const carousel = document.querySelector('.carousel-track');
+  const container = document.querySelector('.carousel-container');
+  const images = carousel.querySelectorAll('img');
+  const totalSlides = images.length;
+  let currentIndex = 0;
+  let autoSlide;
 
-function nextSlide() {
+  function updateCarousel() {
+    const imageWidth = images[0].clientWidth;
+    carousel.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+  }
+
+  function nextSlide() {
     currentIndex = (currentIndex + 1) % totalSlides;
     updateCarousel();
-}
+  }
 
-function goToSlide(index) {
-    currentIndex = index;
-    updateCarousel();
-}
+  function startCarousel() {
+    stopCarousel(); // evita múltiples intervalos
+    autoSlide = setInterval(nextSlide, 3000);
+  }
 
-updateCarousel();
-setInterval(nextSlide, 1000); //cambiar cada 1 segundos
+  function stopCarousel() {
+    clearInterval(autoSlide);
+  }
+
+  // Inicia el carrusel
+  startCarousel();
+
+  // Pausa al pasar el mouse sobre el contenedor
+  container.addEventListener('mouseenter', stopCarousel);
+  container.addEventListener('mouseleave', startCarousel);
+
+  // Ajusta el carrusel si cambia el tamaño de la ventana
+  window.addEventListener('resize', updateCarousel);

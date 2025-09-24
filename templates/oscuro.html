@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florería Manu</title>
+  <link href="{{ url_for('static', filename='css/carrusel.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/eleccion.css') }}">
+  
+</head>
+
+<body class="bg-black text-gray-800">
+
+  <!-- Navegación -->
+  <nav class="bg-black text-gray-400 p-4 flex justify-between items-center">
+    <!-- Logo + Nombre -->
+
+    <div class="flex items-center gap-2">
+      <a href="/tema-oscuro" class="hover:underline">
+        <img src="static/image/img1.png" alt="Logo del negocio"
+          class="w-15 h-10 rounded-lg border-4 border-white shadow-lg hover:scale-110 transition-transform duration-300" />
+
+      </a>
+      <h1 class="text-xl font-bold">Florería Manu</h1>
+    </div>
+
+    <!-- Barra de búsqueda -->
+    <form action="" class="flex items-center border rounded px-2 py-1 bg-gray-100">
+      <input type="search" placeholder="Search here ..." class="bg-transparent outline-none px-2 text-sm" />
+      <a href="" class="hover:underline">
+        <img src="static/image/buscador.png" alt="buscador"
+          class="w-6 h-6 hover:scale-110 transition-transform duration-300" />
+      </a>
+      <i class="fa fa-search text-green-700"></i>
+    </form>
+
+    <!-- Íconos -->
+    <ul class="flex items-center gap-4">
+      <li>
+        <a href="https://www.instagram.com/" class="hover:underline">
+          <img src="static/image/retos.gif" alt="Misiones del cliente"
+            class="w-10 h-10 hover:scale-110 transition-transform duration-300" />
+        </a>
+      </li>
+      <li>
+        <a href="/normal" class="hover:underline">
+          <img src="static/image/oscuro.png" alt="Tema claro/oscuro"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.whatsapp.com/" class="hover:underline">
+          <img src="static/image/carrito2.png" alt="Carrito de compras"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/" class="hover:underline">
+          <img src="static/image/favorito2.png" alt="Sección de favoritos"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+        </a>
+      </li>
+      <li>
+        <a href="/formulario" class="hover:underline">
+          <img src="static/image/perfil2.png" alt="Perfil de usuario"
+            class="w-8 h-8 hover:scale-110 transition-transform duration-300" />
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!--Carrusel de los descuentos-->
+
+<div class="carousel-container relative w-full overflow-hidden mt-10">
+  <div class="carousel-track">
+    <a href="{{ url_for('formulario') }}">
+      <img src="{{ url_for('static', filename='image/descuento1.png') }}" class="h-64 object-cover" alt="Imagen 1">
+    </a>
+    <a href="{{ url_for('formulario') }}">
+      <img src="{{ url_for('static', filename='image/descuento2.png') }}" class="h-64 object-cover" alt="Imagen 2">
+    </a>
+    <a href="{{ url_for('formulario') }}">
+      <img src="{{ url_for('static', filename='image/descuento3.png') }}" class="h-64 object-cover" alt="Imagen 3">
+    </a>
+    <a href="{{ url_for('formulario') }}">
+      <img src="{{ url_for('static', filename='image/descuento4.png') }}" class="h-64 object-cover" alt="Imagen 4">
+    </a>
+    <a href="{{ url_for('formulario') }}">
+      <img src="{{ url_for('static', filename='image/descuento5.png') }}" class="h-64 object-cover" alt="Imagen 5">
+    </a>
+    <a href="{{ url_for('formulario') }}">
+      <img src="{{ url_for('static', filename='image/descuento6.png') }}" class="h-64 object-cover" alt="Imagen 6">
+    </a>
+
+    <!-- Repetir para efecto infinito -->
+    <a href="{{ url_for('formulario') }}">
+      <img src="{{ url_for('static', filename='image/descuento1.png') }}" class="h-64 object-cover" alt="Imagen 1">
+    </a>
+    <a href="{{ url_for('formulario') }}">
+      <img src="{{ url_for('static', filename='image/descuento2.png') }}" class="h-64 object-cover" alt="Imagen 2">
+    </a>
+    <a href="{{ url_for('formulario') }}">
+      <img src="{{ url_for('static', filename='image/descuento3.png') }}" class="h-64 object-cover" alt="Imagen 3">
+    </a>
+    <a href="{{ url_for('formulario') }}">
+      <img src="{{ url_for('static', filename='image/descuento4.png') }}" class="h-64 object-cover" alt="Imagen 4">
+    </a>
+    <a href="{{ url_for('formulario') }}">
+      <img src="{{ url_for('static', filename='image/descuento5.png') }}" class="h-64 object-cover" alt="Imagen 5">
+    </a>
+    <a href="{{ url_for('formulario') }}">
+      <img src="{{ url_for('static', filename='image/descuento6.png') }}" class="h-64 object-cover" alt="Imagen 6">
+    </a>
+  </div>
+</div>
+
+  <div class="relative w-full max-w4xl overflow-hidden rounded-2xl shadow-lg">
+    <div class="flex animate-slide-x">
+      {% for img in imagenes %}
+      <img src="{{ images }}" class="w-full h-64 w-96 object-cover" alt="Image {{ loop.index }}">
+      {% endfor %}
+    </div>
+  </div>
+
+
+
+  <!-- Sección de Ramos -->
+  <section class="p-10">
+    <h5 class="text-center font-bold mb-10 text-white ">RAMOS</h5>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Tarjeta de producto -->
+      <div class="bg-gray-950 shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramo1.jpg" id="imagenramo1"alt="Ramo 1"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="relative p-4 bg-gray-950 rounded shadow-md">
+          <h4 class="font-semibold text-lg text-white">Alma de Bosque</h4>
+          <p class="text-pink-600 font-bold">S/95.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="#" id="heartLink">
+              <img src="static/image/favorito2.png" alt="Sección de favoritos"
+                class="heartIcon w-8 h-8 hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-950 shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramo2.jpg" id="imagenramo2" alt="Ramo 2"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg text-white">Aurora Moderna</h4>
+          <p class="text-pink-600 font-bold">S/100.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="#" id="heartLink">
+              <img src="static/image/favorito2.png" alt="Sección de favoritos"
+                class="heartIcon w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer" />
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-950 shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramo3.png"  id="imagenramo3" 2alt="Ramo 3"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg text-white">Atetish</h4>
+          <p class="text-pink-600 font-bold">S/90.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="#" id="heartLink">
+              <img src="static/image/favorito2.png" alt="Sección de favoritos" 
+                class="heartIcon w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer" />
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-950 shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramo4.png" id="imagenramo4"alt="Ramo 4"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg text-white">Belicate</h4>
+          <p class="text-pink-600 font-bold">S/85.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="#" id="heartLink">
+              <img src="static/image/favorito2.png" alt="Sección de favoritos" 
+                class="heartIcon w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-950 shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramo5.jpg" id="imagenramo5"alt="Ramo 5"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg text-white">Canto de Rio</h4>
+          <p class="text-pink-600 font-bold">S/80.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="#" id="heartLink">
+              <img src="static/image/favorito2.png" alt="Sección de favoritos" 
+                class="heartIcon w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-950 shadow-md rounded-lg overflow-hidden">
+        <img src="static/image/ramo6.png" alt="Ramo 6"
+          class="w-full h-50 object-cover hover:scale-105 transition-transform duration-200" />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg text-white">Clicken lila</h4>
+          <p class="text-pink-600 font-bold">S/90.00</p>
+          <div class="flex items-center justify-between mt-2">
+            <a href="/formulario" class="hover:underline">
+              <button
+                class="mt-2 bg-pink-500 text-white px-10 py-1 rounded hover:bg-green-600 transition-colors duration-300">
+                Añadir al carrito
+            </a>
+            </button>
+            <a href="#" id="heartLink">
+              <img src="static/image/favorito2.png" alt="Sección de favoritos" 
+                class="heartIcon w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Botón flotante de WhatsApp -->
+
+<a href="https://wa.me/51967086515" target="_blank" 
+   class="fixed bottom-6 right-6 z-50">
+  <img src="static/image/whatsapp.png" alt="WhatsApp"
+       class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform duration-300" />
+</a>
+
+
+  <script src="{{ url_for('static', filename='js/sonido.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/favorito2.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/carrusel.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+  
+</body>
+
+
+</html>
